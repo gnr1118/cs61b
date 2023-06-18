@@ -25,6 +25,16 @@ public class SLList {
         size = 1;
     }
 
+    public SLList(int... ints) {
+        this();
+        IntNode p = sentinel;
+        for (int x : ints) {
+            p.next = new IntNode(x, null);
+            p = p.next;
+            size++;
+        }
+    }
+
     /** Adds an item to the front of the list. */
     public void addFirst(int x) {
         sentinel.next = new IntNode(x, sentinel.next);
@@ -45,6 +55,14 @@ public class SLList {
         p.next = new IntNode(x, null);
     }
 
+    public void deleteFirst() {
+        if (sentinel.next == null) {
+            return;
+        }
+        sentinel.next = sentinel.next.next;
+        size--;
+    }
+
     public int size() {
         return size;
     }
@@ -54,10 +72,10 @@ public class SLList {
         L.addFirst(10);
         L.addFirst(5);
         L.addLast(20);
+        L.deleteFirst();
         System.out.println(L.size());
 
-        SLList L2 = new SLList();
-        L2.addLast(5);
+        SLList L2 = new SLList(5, 10, 15, 20, 25);
         System.out.println(L2.size());
     }
 }
