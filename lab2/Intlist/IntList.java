@@ -33,6 +33,11 @@ public class IntList {
         this(0, null);
     }
 
+    public void addFirst(int x) {
+        rest = new IntList(first, rest);
+        first = x;
+    }
+
     /**
      * Returns a list equal to L with all elements squared. Destructive.
      */
