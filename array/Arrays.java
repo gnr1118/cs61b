@@ -37,6 +37,20 @@ public class Arrays {
         return result;
     }
 
+    public static int[] flatten(int[][] x) {
+        int total = 0;
+        for (int i = 0; i < x.length ;i++) {
+            total += x[i].length;
+        }
+        int[] result = new int[total];
+        int i = 0;
+        for (int[] subArr : x) {
+            for (int e : subArr) {
+                result[i++] = e;
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
         int[] newArr = insert(arr, 100, 6);
@@ -47,5 +61,9 @@ public class Arrays {
 
         int[] replicated = replicate(arr);
         System.out.println(replicated.length);
+
+        int[][] _2dArr = {{1, 2, 3}, {}, {7, 8}};
+        int[] flatten = flatten(_2dArr);
+        System.out.println(flatten.length);
     }
 }
