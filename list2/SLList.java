@@ -63,6 +63,42 @@ public class SLList {
         size--;
     }
 
+    public void insert(int x, int position) {
+        IntNode p = sentinel;
+        for (int i = 0; i < position && p.next != null ;i++) {
+            p = p.next;
+        }
+        p.next = new IntNode(x, p.next);
+        size++;
+    }
+
+    public void reverse() {
+        IntNode f = null;
+        IntNode n = sentinel.next;
+        while (n != null) {
+            IntNode tmp = n.next;
+            n.next = f;
+            f = n;
+            n = tmp;
+        }
+        sentinel.next = f;
+    }
+
+    public void reverseWithRecursion() {
+        sentinel.next = reverseHelper(sentinel.next);
+    }
+
+    private static IntNode reverseHelper(IntNode f) {
+        if (f == null || f.next == null) {
+            return f;
+        } else {
+            IntNode reversed = reverseHelper(f.next);
+            f.next.next = f;
+            f.next = null;
+            return reversed;
+        }
+    }
+
     public int size() {
         return size;
     }
@@ -73,9 +109,16 @@ public class SLList {
         L.addFirst(5);
         L.addLast(20);
         L.deleteFirst();
+        L.reverseWithRecursion();
         System.out.println(L.size());
 
         SLList L2 = new SLList(5, 10, 15, 20, 25);
+        L2.insert(0, 0);
+        L2.reverseWithRecursion();
         System.out.println(L2.size());
+
+        SLList L3 = new SLList(5);
+        L3.reverseWithRecursion();
+        System.out.println(L3.size);
     }
 }
