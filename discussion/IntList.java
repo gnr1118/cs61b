@@ -154,4 +154,20 @@ public class IntList {
         }
         return L;
     }
+
+    public static void removeDuplicates(IntList p) {
+        if (p == null) {
+            return;
+        }
+        IntList current = p.rest;
+        IntList previous = p;
+        while (current != null) {
+            if (current.first == previous.first) {
+                previous.rest = current.rest;
+            } else {
+                previous = current;
+            }
+            current = current.rest;
+        }
+    }
 }
