@@ -56,6 +56,23 @@ public class IntList {
         }
     }
 
+    public void skippify() {
+        IntList p = this;
+        int n = 1;
+        while (p != null) {
+            IntList next = p.rest;
+            for (int i = 0; i < n ;i++) {
+                if (next == null) {
+                    break;
+                }
+                next = next.rest;
+            }
+            p.rest = next;
+            p = p.rest;
+            n++;
+        }
+    }
+
     public static IntList squareWithRecursion(IntList L) {
         if (L == null) {
             return L;
