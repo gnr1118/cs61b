@@ -65,5 +65,31 @@ public class Arrays {
         int[][] _2dArr = {{1, 2, 3}, {}, {7, 8}};
         int[] flatten = flatten(_2dArr);
         System.out.println(flatten.length);
+
+        boolean arrayEquals = arrayEquals(
+                new Integer[]{1, 2, 3},
+                new Integer[][]{{1, 2, 3}, {2, 3, 4}, {3, 4, 5}}
+        );
+        System.out.println(arrayEquals);
+    }
+
+    public static boolean arrayEquals(Object[] a1, Object[] a2) {
+        if (a1.length != a2.length) {
+            return false;
+        }
+
+        for (int i = 0; i < a1.length ;i++) {
+            if (a1[i].getClass().isArray() && a2[i].getClass().isArray()) {
+                if (!arrayEquals((Object[]) a1[i], (Object[]) a2[i])) {
+                    return false;
+                }
+            } else {
+                if (!a1[i].equals(a2[i])) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
