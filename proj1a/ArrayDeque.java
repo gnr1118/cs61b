@@ -130,8 +130,14 @@ public class ArrayDeque<T> {
 
         System.out.println(deque.isEmpty());
         deque.addFirst(1);
+        deque.addLast(2);
+        deque.addLast(3);
+        deque.addLast(4);
         deque.addLast(5);
-        deque.addLast(10);
+        deque.addLast(6);
+        deque.addLast(7);
+        deque.addLast(8);
+        deque.addFirst(0);
         System.out.println(deque.isEmpty());
         System.out.println(deque.size());
         deque.printDeque();
@@ -139,6 +145,9 @@ public class ArrayDeque<T> {
         System.out.println(deque.get(0) + " " + deque.get(1) + " " + deque.get(2) + " " + deque.get(3));
 
         System.out.println(deque.removeFirst());
+        System.out.println(deque.removeLast());
+        System.out.println(deque.removeLast());
+        System.out.println(deque.removeLast());
         System.out.println(deque.removeLast());
         System.out.println(deque.isEmpty());
         System.out.println(deque.size());
@@ -150,8 +159,8 @@ public class ArrayDeque<T> {
         deque.printDeque();
 
         deque.addFirst(1);
-        deque.addLast(5);
-        deque.addLast(10);
+        deque.addLast(8);
+        deque.addLast(9);
         System.out.println(deque.isEmpty());
         System.out.println(deque.size());
         deque.printDeque();
