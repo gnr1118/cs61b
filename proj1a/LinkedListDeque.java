@@ -138,5 +138,17 @@ public class LinkedListDeque<T> {
         System.out.println(deque.isEmpty());
         System.out.println(deque.size());
         deque.printDeque();
+
+        System.out.println(deque.removeFirst());
+        System.out.println(deque.isEmpty());
+        System.out.println(deque.size());
+        deque.printDeque();
+
+        deque.addFirst(1);
+        deque.addLast(5);
+        deque.addLast(10);
+        System.out.println(deque.isEmpty());
+        System.out.println(deque.size());
+        deque.printDeque();
     }
 }
