@@ -46,6 +46,10 @@ public class LinkedListDeque<T> {
     }
 
     public void printDeque() {
+        if (isEmpty()) {
+            return;
+        }
+
         Node<T> node = sentinel.next;
 
         if (node != sentinel) {
