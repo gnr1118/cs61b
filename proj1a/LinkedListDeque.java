@@ -118,37 +118,4 @@ public class LinkedListDeque<T> {
             return getRecursive(node.next, index - 1);
         }
     }
-
-    public static void main(String[] args) {
-        LinkedListDeque<Integer> deque = new LinkedListDeque<>();
-
-        System.out.println(deque.isEmpty());
-        deque.addFirst(1);
-        deque.addLast(5);
-        deque.addLast(10);
-        System.out.println(deque.isEmpty());
-        System.out.println(deque.size());
-        deque.printDeque();
-
-        System.out.println(deque.get(0) + " " + deque.get(1) + " " + deque.get(2) + " " + deque.get(3));
-        System.out.println(deque.getRecursive(0) + " " + deque.getRecursive(1) + " " + deque.getRecursive(2) + " " + deque.getRecursive(3));
-
-        System.out.println(deque.removeFirst());
-        System.out.println(deque.removeLast());
-        System.out.println(deque.isEmpty());
-        System.out.println(deque.size());
-        deque.printDeque();
-
-        System.out.println(deque.removeFirst());
-        System.out.println(deque.isEmpty());
-        System.out.println(deque.size());
-        deque.printDeque();
-
-        deque.addFirst(1);
-        deque.addLast(5);
-        deque.addLast(10);
-        System.out.println(deque.isEmpty());
-        System.out.println(deque.size());
-        deque.printDeque();
-    }
 }
