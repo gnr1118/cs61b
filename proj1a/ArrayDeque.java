@@ -101,7 +101,7 @@ public class ArrayDeque<T> {
 
     private void resize(int capacity) {
         T[] newItems = (T[]) new Object[capacity];
-        for (int i = 0, j = plusOne(nextFirst); i < size ;i++, j = plusOne(j)) {
+        for (int i = 0, j = plusOne(nextFirst); i < size; i++, j = plusOne(j)) {
             newItems[i] = items[j];
         }
         items = newItems;
