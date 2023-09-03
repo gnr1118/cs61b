@@ -16,7 +16,7 @@ public class ArrayDeque<T> {
             // resize
         }
         items[nextFirst] = item;
-        nextFirst = indexMinusOne(nextFirst);
+        nextFirst = minusOne(nextFirst);
         size++;
     }
 
@@ -25,7 +25,7 @@ public class ArrayDeque<T> {
             // resize
         }
         items[nextLast] = item;
-        nextLast = indexPlusOne(nextLast);
+        nextLast = plusOne(nextLast);
         size++;
     }
 
@@ -42,16 +42,16 @@ public class ArrayDeque<T> {
             return;
         }
 
-        int currIndex = indexPlusOne(nextFirst);
+        int currIndex = plusOne(nextFirst);
 
         if (currIndex != nextLast) {
             System.out.print(items[currIndex]);
-            currIndex = indexPlusOne(currIndex);
+            currIndex = plusOne(currIndex);
         }
 
         while (currIndex != nextLast) {
             System.out.print(" " + items[currIndex]);
-            currIndex = indexPlusOne(currIndex);
+            currIndex = plusOne(currIndex);
         }
 
         System.out.println();
@@ -62,7 +62,7 @@ public class ArrayDeque<T> {
             return null;
         }
 
-        int prevNextFirst = indexPlusOne(nextFirst);
+        int prevNextFirst = plusOne(nextFirst);
         T item = items[prevNextFirst];
         nextFirst = prevNextFirst;
         items[prevNextFirst] = null;
@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
             return null;
         }
 
-        int prevNextLast = indexMinusOne(nextLast);
+        int prevNextLast = minusOne(nextLast);
         T item = items[prevNextLast];
         nextLast = prevNextLast;
         items[prevNextLast] = null;
@@ -86,12 +86,12 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        int beginIndex = indexPlusOne(nextFirst);
+        int beginIndex = plusOne(nextFirst);
         int targetIndex = (beginIndex + index) % items.length;
         return items[targetIndex];
     }
 
-    private int indexMinusOne(int index) {
+    private int minusOne(int index) {
         index -= 1;
         if (index < 0) {
             index = items.length - 1;
@@ -99,7 +99,7 @@ public class ArrayDeque<T> {
         return index;
     }
 
-    private int indexPlusOne(int index) {
+    private int plusOne(int index) {
         index += 1;
         if (index > items.length - 1) {
             index = 0;
