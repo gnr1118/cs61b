@@ -34,7 +34,15 @@ public class IntList {
     }
 
     public static IntList reverse(IntList L) {
-        return null;
+        IntList f = null;
+        IntList n = L;
+        while (n != null) {
+            IntList tmp = n.rest;
+            n.rest = f;
+            f = n;
+            n = tmp;
+        }
+        return f;
     }
 
     public void addFirst(int x) {
