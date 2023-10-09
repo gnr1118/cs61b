@@ -33,6 +33,10 @@ public class IntList {
         this(0, null);
     }
 
+    public static IntList reverse(IntList L) {
+        return null;
+    }
+
     public void addFirst(int x) {
         rest = new IntList(first, rest);
         first = x;
