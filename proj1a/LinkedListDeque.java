@@ -128,8 +128,10 @@ public class LinkedListDeque<T> {
         if (index >= size) {
             return null;
         }
-        return index < size / 2 ? getRecursiveFromFront(sentinelFront.next, index) :
-                getRecursiveFromBack(sentinelBack.prev, size - 1 - index);
+        if (index < size / 2) {
+            return getRecursiveFromFront(sentinelFront.next, index);
+        }
+        return getRecursiveFromBack(sentinelBack.prev, size - 1 - index);
     }
 
     private T getRecursiveFromFront(Node<T> node, int count) {
