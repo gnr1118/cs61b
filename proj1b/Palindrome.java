@@ -12,4 +12,8 @@ public class Palindrome {
         }
         return deque;
     }
+
+    public boolean isPalindrome(String word) {
+        return false;
+    }
 }
