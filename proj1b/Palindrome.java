@@ -19,6 +19,12 @@ public class Palindrome {
             return true;
         }
 
-        return false;
+        Deque<Character> deque = wordToDeque(word);
+        for (int i = 0; i < deque.size() / 2 ;i++) {
+            if (deque.removeFirst() != deque.removeLast()) {
+                return false;
+            }
+        }
+        return true;
     }
 }
