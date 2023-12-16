@@ -14,6 +14,10 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word) {
+        if (word.trim().isEmpty()) {
+            return true;
+        }
+
         return false;
     }
 }
