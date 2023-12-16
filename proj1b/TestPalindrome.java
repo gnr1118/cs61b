@@ -29,4 +29,17 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("A "));
         assertTrue(palindrome.isPalindrome("b  "));
     }
+
+    @Test
+    public void wordsShouldBePalindrome() {
+        assertTrue(palindrome.isPalindrome("racecar"));
+        assertTrue(palindrome.isPalindrome("noon"));
+    }
+
+    @Test
+    public void wordsShouldNotBePalindrome() {
+        assertFalse(palindrome.isPalindrome("horse"));
+        assertFalse(palindrome.isPalindrome("rancor"));
+        assertFalse(palindrome.isPalindrome("aaaaab"));
+    }
 }
