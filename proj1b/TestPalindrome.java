@@ -22,4 +22,11 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome(" "));
         assertTrue(palindrome.isPalindrome("  "));
     }
+
+    @Test
+    public void singleCharacterStringIsAlwaysPalindrome() {
+        assertTrue(palindrome.isPalindrome("a"));
+        assertTrue(palindrome.isPalindrome("A "));
+        assertTrue(palindrome.isPalindrome("b  "));
+    }
 }
