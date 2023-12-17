@@ -24,7 +24,8 @@ public class Palindrome {
     }
 
     private static boolean checkPalindromeIteratively(Deque<Character> deque) {
-        for (int i = 0; i < deque.size() / 2 ; i++) {
+        int size = deque.size();
+        for (int i = 0; i < size / 2 ; i++) {
             if (deque.removeFirst() != deque.removeLast()) {
                 return false;
             }
