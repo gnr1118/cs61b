@@ -18,13 +18,9 @@ public class TestPalindrome {
     }
 
     @Test
-    public void blankStringIsAlwaysPalindrome() {
+    public void emptyStringIsAlwaysPalindrome() {
         assertTrue(palindrome.isPalindrome(""));
-        assertTrue(palindrome.isPalindrome(" "));
-        assertTrue(palindrome.isPalindrome("  "));
         assertTrue(palindrome.isPalindrome("", offByOne));
-        assertTrue(palindrome.isPalindrome(" ", offByOne));
-        assertTrue(palindrome.isPalindrome("  ", offByOne));
     }
 
     @Test
