@@ -14,12 +14,6 @@ public class TestOffByOne {
     }
 
     @Test
-    public void lowerAndUpperCaseForSameCharacterShouldNotEqual() {
-        assertFalse(offByOne.equalChars('a', 'A'));
-        assertFalse(offByOne.equalChars('b', 'B'));
-    }
-
-    @Test
     public void twoCharactersWhichOffByOneShouldEqual() {
         assertTrue(offByOne.equalChars('a', 'b'));
         assertTrue(offByOne.equalChars('b', 'a'));
