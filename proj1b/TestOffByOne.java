@@ -14,6 +14,12 @@ public class TestOffByOne {
     }
 
     @Test
+    public void lowerAndUpperCaseForSameCharacterShouldNotEqual() {
+        assertFalse(offByOne.equalChars('a', 'A'));
+        assertFalse(offByOne.equalChars('b', 'B'));
+    }
+
+    @Test
     public void twoCharactersWhichOffByOneShouldEqual() {
         assertTrue(offByOne.equalChars('a', 'b'));
         assertTrue(offByOne.equalChars('b', 'a'));
@@ -27,5 +33,11 @@ public class TestOffByOne {
         assertFalse(offByOne.equalChars('b', 'f'));
         assertFalse(offByOne.equalChars('d', 's'));
         assertFalse(offByOne.equalChars('c', 'x'));
+    }
+
+    @Test
+    public void nonLettersCharacterShouldFollowOffByOneRule() {
+        assertTrue(offByOne.equalChars('&', '%'));
+        assertFalse(offByOne.equalChars('#', '*'));
     }
 }
