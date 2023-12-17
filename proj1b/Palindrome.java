@@ -47,6 +47,29 @@ public class Palindrome {
         if (trimmed.isEmpty() || trimmed.length() == 1) {
             return true;
         }
-        return false;
+
+        Deque<Character> deque = wordToDeque(word);
+        return checkPalindromeIteratively(deque, characterComparator);
+//        return checkPalindromeRecursively(deque, characterComparator);
+    }
+
+    private static boolean checkPalindromeIteratively(Deque<Character> deque, CharacterComparator characterComparator) {
+        int size = deque.size();
+        for (int i = 0; i < size / 2 ; i++) {
+            if (!characterComparator.equalChars(deque.removeFirst(), deque.removeLast())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean checkPalindromeRecursively(Deque<Character> deque, CharacterComparator characterComparator) {
+        if (deque.size() <= 1) {
+            return true;
+        }
+        if (!characterComparator.equalChars(deque.removeFirst(), deque.removeLast())) {
+            return false;
+        }
+        return checkPalindromeRecursively(deque, characterComparator);
     }
 }
