@@ -6,7 +6,7 @@ public class Palindrome {
             return null;
         }
         Deque<Character> deque = new LinkedListDeque<>();
-        for (int i = 0; i < word.length() ;i++) {
+        for (int i = 0; i < word.length(); i++) {
             deque.addLast(word.charAt(i));
         }
         return deque;
@@ -15,12 +15,11 @@ public class Palindrome {
     public boolean isPalindrome(String word) {
         Deque<Character> deque = wordToDeque(word);
         return checkPalindromeIteratively(deque);
-//        return checkPalindromeRecursively(deque);
     }
 
     private static boolean checkPalindromeIteratively(Deque<Character> deque) {
         int size = deque.size();
-        for (int i = 0; i < size / 2 ; i++) {
+        for (int i = 0; i < size / 2; i++) {
             if (deque.removeFirst() != deque.removeLast()) {
                 return false;
             }
@@ -41,12 +40,11 @@ public class Palindrome {
     public boolean isPalindrome(String word, CharacterComparator characterComparator) {
         Deque<Character> deque = wordToDeque(word);
         return checkPalindromeIteratively(deque, characterComparator);
-//        return checkPalindromeRecursively(deque, characterComparator);
     }
 
     private static boolean checkPalindromeIteratively(Deque<Character> deque, CharacterComparator characterComparator) {
         int size = deque.size();
-        for (int i = 0; i < size / 2 ; i++) {
+        for (int i = 0; i < size / 2; i++) {
             if (!characterComparator.equalChars(deque.removeFirst(), deque.removeLast())) {
                 return false;
             }
