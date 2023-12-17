@@ -13,11 +13,6 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word) {
-        String trimmed = word.trim();
-        if (trimmed.isEmpty() || trimmed.length() == 1) {
-            return true;
-        }
-
         Deque<Character> deque = wordToDeque(word);
         return checkPalindromeIteratively(deque);
 //        return checkPalindromeRecursively(deque);
@@ -44,11 +39,6 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word, CharacterComparator characterComparator) {
-        String trimmed = word.trim();
-        if (trimmed.isEmpty() || trimmed.length() == 1) {
-            return true;
-        }
-
         Deque<Character> deque = wordToDeque(word);
         return checkPalindromeIteratively(deque, characterComparator);
 //        return checkPalindromeRecursively(deque, characterComparator);
