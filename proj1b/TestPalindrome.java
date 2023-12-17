@@ -30,11 +30,9 @@ public class TestPalindrome {
     @Test
     public void singleCharacterStringIsAlwaysPalindrome() {
         assertTrue(palindrome.isPalindrome("a"));
-        assertTrue(palindrome.isPalindrome("A "));
-        assertTrue(palindrome.isPalindrome("b  "));
+        assertTrue(palindrome.isPalindrome("b"));
         assertTrue(palindrome.isPalindrome("a", offByOne));
-        assertTrue(palindrome.isPalindrome("A ", offByOne));
-        assertTrue(palindrome.isPalindrome("b  ", offByOne));
+        assertTrue(palindrome.isPalindrome("b", offByOne));
     }
 
     @Test
