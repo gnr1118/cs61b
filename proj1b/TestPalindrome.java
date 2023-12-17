@@ -41,6 +41,8 @@ public class TestPalindrome {
     public void wordsShouldBePalindrome() {
         assertTrue(palindrome.isPalindrome("racecar"));
         assertTrue(palindrome.isPalindrome("noon"));
+        assertTrue(palindrome.isPalindrome("nopm", offByOne));
+        assertTrue(palindrome.isPalindrome("flake", offByOne));
     }
 
     @Test
@@ -48,7 +50,8 @@ public class TestPalindrome {
         assertFalse(palindrome.isPalindrome("horse"));
         assertFalse(palindrome.isPalindrome("rancor"));
         assertFalse(palindrome.isPalindrome("aaaaab"));
+        assertFalse(palindrome.isPalindrome("horse", offByOne));
+        assertFalse(palindrome.isPalindrome("rancor", offByOne));
+        assertFalse(palindrome.isPalindrome("aaaaab", offByOne));
     }
-
-
 }
