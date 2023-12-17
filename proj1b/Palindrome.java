@@ -43,6 +43,10 @@ public class Palindrome {
     }
 
     public boolean isPalindrome(String word, CharacterComparator characterComparator) {
+        String trimmed = word.trim();
+        if (trimmed.isEmpty() || trimmed.length() == 1) {
+            return true;
+        }
         return false;
     }
 }
