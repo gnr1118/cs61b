@@ -41,4 +41,8 @@ public class Palindrome {
         }
         return checkPalindromeRecursively(deque);
     }
+
+    public boolean isPalindrome(String word, CharacterComparator characterComparator) {
+        return false;
+    }
 }
